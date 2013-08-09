@@ -1,0 +1,28 @@
+%h1 Verzoeken
+
+%table.table.table-border
+  %thead
+    %tr
+      %th
+        Wanneer
+      %th
+        Wie
+      %th
+        Welk nummer
+      %th
+        Link
+  %tbody
+    -@links.each do |link|
+      %tr
+        %td
+          =link.created_at.strftime("%d - %T")
+        %td
+          =link.title
+        %td
+          =link.description
+        %td
+          =link_to "Link naar de video", link.url
+      
+  
+  
+=link_to "Nieuw verzoek indienen", new_link_path, :class => "btn"

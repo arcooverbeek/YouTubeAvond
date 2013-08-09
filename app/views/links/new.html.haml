@@ -1,0 +1,25 @@
+%h1
+  Nieuw verzoek indienen
+=form_for @link do |f|
+  .form-group
+    %label 
+      YouTube Link
+    %br  
+    =f.text_field :url
+    %br
+    %br
+    %label 
+      Aanvrager  (Je eigen naam)
+    %br
+    =f.text_field :title
+    %br
+    %br
+    %label 
+      Titel van het lied
+    %br
+    =f.text_field :description
+    %br
+    %br
+    =f.submit "Verzoek indienen!", :class => "btn"
+    of terug naar 
+    =link_to "Verzoeken overzicht", links_path
